@@ -16,7 +16,7 @@
     "connector"
   ],
   "author": "Nick Chistyakov (aka kolach)",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/kolach/loopback-component-cloudinary/issues"
   },
