@@ -30,4 +30,9 @@ describe('CloudinaryStorageService', function() {
 		});
 	});
 
+	describe('#upload(req, req, options, cb)', function() {
+		it('should call handler.upload(cloudinary, req, res, options, cb)', function() {
+		});
+	});
+
 });
