@@ -1,0 +1,28 @@
+{
+  "name": "@kolach/loopback-component-cloudinary",
+  "version": "0.0.1",
+  "description": "Cloudinary connector for loopback",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kolach/loopback-component-cloudinary.git"
+  },
+  "keywords": [
+    "loopback",
+    "cloudinary",
+    "connector"
+  ],
+  "author": "Nick Chistyakov (aka kolach)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kolach/loopback-component-cloudinary/issues"
+  },
+  "homepage": "https://github.com/kolach/loopback-component-cloudinary#readme",
+  "dependencies": {
+    "cloudinary": "^1.3.0",
+    "formidable": "^1.0.17"
+  }
+}
