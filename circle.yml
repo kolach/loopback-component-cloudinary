@@ -1,0 +1,5 @@
+dependencies:
+  cache_directories:
+    - node_modules
+  override:
+    - npm prune && npm install

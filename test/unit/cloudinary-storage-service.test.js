@@ -1,19 +1,19 @@
 var cloudinary = require('cloudinary');
-var CloudinaryStorageService = require('../lib/cloudinary-storage-service');
-var handler = require('../lib/cloudinary-handler');
+var CloudinaryStorageService = require('../../lib/cloudinary-storage-service');
+var handler = require('../../lib/cloudinary-handler');
 
 describe('CloudinaryStorageService', function() {
 
 	var cloudinaryStorageService;
-	var cloudinaryOptions = {
-		cloudName: 'cloud',
-		apiKey: 'API_KEY',
-		apiSecret: 'API_SECRET'
+	var cloudinaryConfig = {
+		'cloud_name': 'cloud',
+		'api_key': 'API_KEY',
+		'api_secret': 'API_SECRET'
 	};
 
 	beforeEach(function() {
 		spy(cloudinary, 'config');
-		cloudinaryStorageService = new CloudinaryStorageService(cloudinaryOptions);
+		cloudinaryStorageService = new CloudinaryStorageService({config: cloudinaryConfig});
 	});
 
 	afterEach(function() {
@@ -21,11 +21,7 @@ describe('CloudinaryStorageService', function() {
 	});
 
 	it('should configure cloudinary service', function() {
-		cloudinary.config.should.have.been.calledWith({
-			'cloud_name': cloudinaryOptions.cloudName,
-			'api_key': cloudinaryOptions.apiKey,
-			'api_secret': cloudinaryOptions.apiSecret
-		});
+		cloudinary.config.should.have.been.calledWith(cloudinaryConfig);
 	});
 
 	describe('#upload(req, res, options, cb)', function() {
@@ -43,6 +39,10 @@ describe('CloudinaryStorageService', function() {
 			handler.upload.should.be.calledWith(cloudinary, req, res, options, cb);
 
 			handler.upload.restore();
+		});
+
+		it('should be shared', function() {
+			cloudinaryStorageService.upload.shared.should.be.equal(true);
 		});
 
 	});
