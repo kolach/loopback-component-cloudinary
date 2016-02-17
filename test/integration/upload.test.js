@@ -5,7 +5,7 @@ var path = require('path');
 
 var app = loopback();
 
-var TEST_TAG = 'loopback-component-cloudinary-test';
+var TEST_TAG = process.env.CLOUDINARY_TEST_TAG || 'loopback-component-cloudinary-test';
 
 var cloudinaryConfig = {
 	'cloud_name': process.env.CLOUDINARY_CLOUD_NAME,
