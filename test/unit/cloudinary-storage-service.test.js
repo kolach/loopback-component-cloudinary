@@ -5,11 +5,6 @@ var handler = require('../../lib/cloudinary-handler');
 describe('CloudinaryStorageService', function() {
 
 	var cloudinaryStorageService;
-	var cloudinaryConfig = {
-		'cloud_name': 'cloud',
-		'api_key': 'API_KEY',
-		'api_secret': 'API_SECRET'
-	};
 
 	beforeEach(function() {
 		spy(cloudinary, 'config');

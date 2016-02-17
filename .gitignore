@@ -35,3 +35,6 @@ node_modules
 # Vim temporal files
 *.swp
 *.swo
+
+# Local config files
+*.local.*

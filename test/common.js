@@ -6,6 +6,7 @@ global.expect = require('chai').expect;
 global.spy = require('sinon').spy;
 global.stub = require('sinon').stub;
 global.AssertionError = require('chai').AssertionError;
+global.cloudinaryConfig = require('./cloudinary.config');
 
 global.swallow = function(thrower) {
 	try {

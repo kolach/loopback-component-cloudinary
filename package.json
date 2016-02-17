@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "pretest": "eslint .",
-    "test": "./node_modules/.bin/mocha --timeout 30000 test/unit/*test.js test/integration/*test.js"
+    "test": "./node_modules/.bin/mocha --timeout 30000 test/unit/**/*test.js test/integration/**/*test.js"
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,7 @@
     "mocha": "^2.4.5",
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0",
-    "supertest": "^1.2.0"
+    "supertest": "^1.2.0",
+    "uuid": "^2.0.1"
   }
 }
