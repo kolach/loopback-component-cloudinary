@@ -42,10 +42,12 @@ datasource.json
   ...
   "cloudinary": {
     "name": "cloudinary",
-    "connector": "loopback-component-cloudinary"
-    "cloudName": "your_cloud_name",
-    "apiKey": "your_api_key",
-    "apiSecret": "your_api_secret"
+    "connector": "@kolach/loopback-component-cloudinary"
+		"config": {
+			"cloud_name": "your_cloud_name",
+			"api_key": "your_api_key",
+			"api_secret": "your_api_secret"
+		}
   }
 }
 ```
