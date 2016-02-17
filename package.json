@@ -30,6 +30,7 @@
     "chai": "^3.5.0",
     "eslint": "^2.1.0",
     "eslint-config-defaults": "^9.0.0",
+    "lodash": "^4.5.0",
     "loopback": "^2.26.2",
     "mocha": "^2.4.5",
     "sinon": "^1.17.3",
