@@ -7,12 +7,18 @@ var app = loopback();
 
 var TEST_TAG = 'loopback-component-cloudinary-test';
 
+var cloudinaryConfig = {
+	'cloud_name': process.env.CLOUDINARY_CLOUD_NAME,
+	'api_key': process.env.CLOUDINARY_API_KEY,
+	'api_secret': process.env.CLOUDINARY_CLOUD_SECRET
+};
+
 // expose a rest api
 app.use(loopback.rest());
 
 var ds = loopback.createDataSource({
 	connector: require('../../lib/cloudinary-connector'),
-	config: true
+	config: cloudinaryConfig
 });
 
 var Image = ds.createModel('image', {}, {base: 'Model'});
