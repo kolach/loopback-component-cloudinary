@@ -1,8 +1,6 @@
-var chai = require('chai');
-var should = chai.should();
-var sinon = require('sinon');
 var cloudinary = require('cloudinary');
 var CloudinaryStorageService = require('../lib/cloudinary-storage-service');
+var handler = require('../lib/cloudinary-handler');
 
 describe('CloudinaryStorageService', function() {
 
@@ -14,7 +12,7 @@ describe('CloudinaryStorageService', function() {
 	};
 
 	beforeEach(function() {
-		sinon.spy(cloudinary, 'config');
+		spy(cloudinary, 'config');
 		cloudinaryStorageService = new CloudinaryStorageService(cloudinaryOptions);
 	});
 
@@ -30,9 +28,23 @@ describe('CloudinaryStorageService', function() {
 		});
 	});
 
-	describe('#upload(req, req, options, cb)', function() {
+	describe('#upload(req, res, options, cb)', function() {
+
 		it('should call handler.upload(cloudinary, req, res, options, cb)', function() {
+			stub(handler, 'upload').returns(true);
+
+			var req = {a: 1};
+			var res = {b: 2};
+			var options = {c: 3};
+
+			function cb() {}
+
+			cloudinaryStorageService.upload(req, res, options, cb);
+			handler.upload.should.be.calledWith(cloudinary, req, res, options, cb);
+
+			handler.upload.restore();
 		});
+
 	});
 
 });
