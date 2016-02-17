@@ -1,5 +1,7 @@
 # Loopback Component Cloudinary
 
+[![Circle CI](https://circleci.com/gh/kolach/loopback-component-cloudinary.svg?style=svg)](https://circleci.com/gh/kolach/loopback-component-cloudinary)
+
 A small loopback component that acts as a cloudinary datasource.
 Only image upload is supported is supported currently.
 
