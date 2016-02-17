@@ -13,6 +13,7 @@
     "mocha": true,
   },
   "globals": {
+    "chai": false,
     "sinon": false,
     "should": false
   }
