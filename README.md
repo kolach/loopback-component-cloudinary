@@ -9,7 +9,7 @@ Only image upload is supported is supported currently.
 npm install loopback-component-cloudinary
 ```
 
-Generate an Image model:
+Generate an image model:
 
 image.js
 ```
