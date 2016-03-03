@@ -11,12 +11,19 @@ app.set('legacyExplorer', false);
 var TEST_TAG = process.env.CLOUDINARY_TEST_TAG || 'loopback-component-cloudinary-test';
 var TEST_FOLDER = 'test';
 
+var UPLOAD_FOLDER = 'tmp';
+var UPLOAD_TAG1 = 'test1';
+var UPLOAD_TAG2 = 'test2';
+var UPLOAD_TAGS = [UPLOAD_TAG1, UPLOAD_TAG2].join();
+var uploadConfig = {tags: UPLOAD_TAGS, folder: UPLOAD_FOLDER};
+
 // expose a rest api
 app.use(loopback.rest());
 
 var ds = loopback.createDataSource({
 	connector: require('../../lib/cloudinary-connector'),
-	config: cloudinaryConfig
+	config: cloudinaryConfig,
+	upload: uploadConfig
 });
 
 var Image = ds.createModel('image', {}, {base: 'Model'});
@@ -59,10 +66,12 @@ describe('Upload test', function() {
 				should.not.exist(err);
 				var result = res.body.result;
 
-				result.should.have.property('public_id', path.join(TEST_FOLDER, publicId));
+				result.should.have.property('public_id', path.join(UPLOAD_FOLDER, TEST_FOLDER, publicId));
 				result.should.have.property('resource_type', 'image');
 				result.should.have.property('type', 'upload');
 				result.should.have.deep.property('tags[0]', TEST_TAG);
+				result.should.have.deep.property('tags[1]', UPLOAD_TAG1);
+				result.should.have.deep.property('tags[2]', UPLOAD_TAG2);
 				done();
 			});
 	});

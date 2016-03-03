@@ -36,5 +36,8 @@ node_modules
 *.swp
 *.swo
 
+# Mac OSX
+.DS_Store
+
 # Local config files
 *.local.*

@@ -5,10 +5,18 @@ var handler = require('../../lib/cloudinary-handler');
 describe('CloudinaryStorageService', function() {
 
 	var cloudinaryStorageService;
+	var UPLOAD_FOLDER = 'tmp';
+	var UPLOAD_TAG1 = 'test1';
+	var UPLOAD_TAG2 = 'test2';
+	var UPLOAD_TAGS = [UPLOAD_TAG1, UPLOAD_TAG2].join();
+	var uploadConfig = {tags: UPLOAD_TAGS, folder: UPLOAD_FOLDER};
 
 	beforeEach(function() {
 		spy(cloudinary, 'config');
-		cloudinaryStorageService = new CloudinaryStorageService({config: cloudinaryConfig});
+		cloudinaryStorageService = new CloudinaryStorageService({
+			config: cloudinaryConfig,
+			upload: uploadConfig
+		});
 	});
 
 	afterEach(function() {
@@ -32,6 +40,7 @@ describe('CloudinaryStorageService', function() {
 
 			cloudinaryStorageService.upload(req, res, options, cb);
 			handler.upload.should.be.calledWith(cloudinary, req, res, options, cb);
+			options.upload.should.be.equal(uploadConfig);
 
 			handler.upload.restore();
 		});

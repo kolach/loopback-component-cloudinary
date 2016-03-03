@@ -1,11 +1,12 @@
 {
   "name": "@kolach/loopback-component-cloudinary",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Cloudinary connector for loopback",
   "main": "index.js",
   "scripts": {
     "pretest": "eslint .",
-    "test": "./node_modules/.bin/mocha --timeout 30000 test/unit/**/*test.js test/integration/**/*test.js"
+    "test": "./node_modules/.bin/mocha --timeout 5000 test/unit/**/*test.js test/integration/**/*test.js",
+		"test:debug": "npm run test -- --debug-brk"
   },
   "repository": {
     "type": "git",

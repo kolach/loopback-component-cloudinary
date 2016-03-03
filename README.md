@@ -39,7 +39,6 @@ Add cloudinary datasource
 datasource.json
 ```
 {
-  ...
   "cloudinary": {
     "name": "cloudinary",
     "connector": "@kolach/loopback-component-cloudinary"
@@ -51,6 +50,26 @@ datasource.json
   }
 }
 ```
+
+Optionally define upload default parameters:
+```
+{
+  "cloudinary": {
+    "name": "cloudinary",
+    "connector": "@kolach/loopback-component-cloudinary"
+		"config": {
+			"cloud_name": "your_cloud_name",
+			"api_key": "your_api_key",
+			"api_secret": "your_api_secret"
+		},
+		"upload": {
+			"tags": "staging, flickr",
+			"folder": "important"
+		}
+  }
+}
+```
+This configuration will automatically add _staging_ and _flickr_ tags, and setup root folder as _important_
 
 Connect Image model to cloudany datasource
 
