@@ -1,6 +1,6 @@
 {
   "name": "@kolach/loopback-component-cloudinary",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Cloudinary connector for loopback",
   "main": "index.js",
   "scripts": {
