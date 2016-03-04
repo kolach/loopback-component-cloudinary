@@ -8,6 +8,8 @@ var app = loopback();
 
 app.set('legacyExplorer', false);
 
+var PORT = 3031;
+
 var TEST_TAG = process.env.CLOUDINARY_TEST_TAG || 'loopback-component-cloudinary-test';
 var TEST_FOLDER = 'test';
 
@@ -38,7 +40,7 @@ describe('Upload test', function() {
 	var server = null;
 
 	before(function(done) {
-		server = app.listen(3000, function() {
+		server = app.listen(PORT, function() {
 			done();
 		});
 	});
@@ -54,7 +56,7 @@ describe('Upload test', function() {
 	it('should upload file', function(done) {
 		var publicId = uuid.v4();
 
-		request('http://localhost:3000')
+		request('http://localhost:' + PORT)
 			.post('/images/upload')
 			.field('tags', TEST_TAG)
 			.field('folder', TEST_FOLDER)
