@@ -58,10 +58,10 @@ Optionally define upload default parameters:
     "name": "cloudinary",
     "connector": "@kolach/loopback-component-cloudinary",
     "config": {
-			"cloud_name": "your_cloud_name",
-			"api_key": "your_api_key",
-			"api_secret": "your_api_secret"
-		},
+      "cloud_name": "your_cloud_name",
+      "api_key": "your_api_key",
+      "api_secret": "your_api_secret"
+    },
     "upload": {
       "tags": "staging, flickr",
       "folder": "important"
