@@ -41,7 +41,7 @@ datasource.json
 {
   "cloudinary": {
     "name": "cloudinary",
-    "connector": "@kolach/loopback-component-cloudinary"
+    "connector": "@kolach/loopback-component-cloudinary",
 		"config": {
 			"cloud_name": "your_cloud_name",
 			"api_key": "your_api_key",
@@ -56,7 +56,7 @@ Optionally define upload default parameters:
 {
   "cloudinary": {
     "name": "cloudinary",
-    "connector": "@kolach/loopback-component-cloudinary"
+    "connector": "@kolach/loopback-component-cloudinary",
 		"config": {
 			"cloud_name": "your_cloud_name",
 			"api_key": "your_api_key",
