@@ -7,11 +7,13 @@ Only image upload is supported is supported currently.
 
 ## Installation and Usage
 
+### Install a module.
+
 ```
 npm install loopback-component-cloudinary
 ```
 
-Generate an image model:
+### Generate an image model:
 
 image.js
 ```
@@ -34,7 +36,7 @@ image.json
 }
 ```
 
-Add cloudinary datasource
+### Add cloudinary datasource
 
 datasource.json
 ```
@@ -71,7 +73,9 @@ Optionally define upload default parameters:
 ```
 This configuration will automatically add _staging_ and _flickr_ tags, and setup root folder as _important_
 
-Connect Image model to cloudany datasource
+To override default tags and folder you may add `tags` and `folder` fields into form you're sending. 
+
+### Connect Image model to cloudany datasource
 
 model.config.json
 ```
