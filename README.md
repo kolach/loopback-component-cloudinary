@@ -85,3 +85,19 @@ model.config.json
 ```
 
 The configuration above will add POST ${restApiRoot}/images/upload url.
+
+### Adding custom tags to single image
+
+If you want to add a custom tags to each image separately, you can add them to request object, for 
+example in `beforeRemote` hook. Here is an example how to add custom tags and folder to a file. 
+Default tags will be overridden.  
+
+```
+Image.beforeRemote('upload', function (ctx, modelInstance, next) {
+    ctx.req.uploadOpts = ctx.req.uploadOpts || {};
+    ctx.req.uploadOpts.tags = 'cat, dog';
+    ctx.req.uploadOpts.folder = 'private';
+    next();
+  });
+
+```   
